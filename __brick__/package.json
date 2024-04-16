@@ -1,0 +1,14 @@
+{
+  "name": "{{applicationName.paramCase()}}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "docker build -t {{applicationName.paramCase()}} .",
+    "start": "docker run -p {{port}}:{{port}} --env-file ../../.env {{applicationName.paramCase()}}",
+    "start:production": "docker run -p {{port}}:{{port}} --env-file ../../.env.production {{applicationName.paramCase()}}"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
