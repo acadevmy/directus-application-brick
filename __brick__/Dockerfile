@@ -1,8 +1,10 @@
 # syntax=docker/dockerfile:1.4
-FROM directus/directus:10.10.4
+FROM directus/directus:11.14.1
+ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
+
 USER root
 RUN corepack enable \
-&& corepack prepare pnpm@8.7.6 --activate \
+&& corepack prepare pnpm@10.28.1 --activate \
 && chown node:node /directus
 
 COPY ./.env.vault /directus/.env.vault
